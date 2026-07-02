@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects - Aarav</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html"><img src="larry.png" alt="Home"></a>
+            <div class="links">
+                <a href="projects.html">Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="uses.html">Uses</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <h1>Projects</h1>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/fetch">fetch</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>3D spinning fetch tool. does blinn-phong shading and everything, single file.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/hum">hum</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>minimal TUI music player. searches youtube, plays with mpv, downloads to a local library.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/glance">glance</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>clipboard daemon thing for wayland. watches directories and pops up a waybar widget.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/gentoo.c">gentoo.c</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>spinning ascii gentoo logo in your terminal. just for fun.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/gslc">gslc</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>geometry shorthand compiler. turns shorthand into full proofs.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/sef">sef</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>terminal text editor with ESDF keybinds. config.h style, like dwl.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/pypour">pypour</a> <span class="stars"></span> <span class="lang">Python</span></h2>
+            <p>write python in french. pourquoi pas.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/wlim">wlim</a> <span class="stars"></span> <span class="lang">C</span></h2>
+            <p>vimium-style click hints for wayland. click stuff without a mouse.</p>
+        </div>
+
+        <div class="project">
+            <h2><a href="https://github.com/areofyl/dotfiles">dotfiles</a> <span class="stars"></span> <span class="lang">Shell</span></h2>
+            <p>my gentoo asahi configs. dwl, shell, editor, everything.</p>
+        </div>
+
+    </div>
+
+    <script>
+        fetch('https://api.github.com/users/areofyl/repos?per_page=100')
+            .then(function(r) { return r.json(); })
+            .then(function(repos) {
+                document.querySelectorAll('.project').forEach(function(el) {
+                    var link = el.querySelector('a');
+                    var name = link.href.split('/').pop();
+                    var repo = repos.find(function(r) { return r.name === name; });
+                    if (repo) {
+                        if (name === 'pypour') {
+                            el.querySelector('.stars').textContent = 'oui';
+                            return;
+                        }
+                        var parts = [];
+                        if (repo.stargazers_count > 1)
+                            parts.push(repo.stargazers_count + ' stars');
+                        if (repo.forks_count > 1)
+                            parts.push(repo.forks_count + ' forks');
+                        else if (repo.forks_count === 1)
+                            parts.push('1 fork');
+                        el.querySelector('.stars').textContent = parts.join(' / ');
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
