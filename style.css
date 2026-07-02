@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lora", "Georgia", serif;
+    background: #1a1a1a;
+    color: #c8c8c8;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+a {
+    color: #b0a090;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* layout */
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+/* nav */
+
+nav {
+    border-bottom: 1px solid #333;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 42px;
+    width: auto;
+}
+
+nav .links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* headings */
+
+h1 {
+    font-size: 1.6rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+/* home */
+
+.intro {
+    margin-bottom: 3rem;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+}
+
+.deco {
+    position: absolute;
+    width: 200px;
+}
+
+.deco-left {
+    right: calc(100% + 1.5rem);
+    top: 6rem;
+}
+
+.deco-right {
+    left: calc(100% + 1.5rem);
+    top: 16rem;
+}
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.card {
+    display: block;
+    border: 1px solid #333;
+    padding: 1rem;
+    color: #c8c8c8;
+    text-decoration: none;
+}
+
+.card:hover {
+    border-color: #555;
+    text-decoration: none;
+}
+
+.card strong {
+    display: block;
+    color: #e0e0e0;
+    margin-bottom: 0.3rem;
+}
+
+.card span {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.more-link {
+    margin-top: 0.8rem;
+    margin-bottom: 2.5rem;
+}
+
+/* project list */
+
+.project {
+    margin-bottom: 2rem;
+}
+
+.project h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+}
+
+.project p {
+    color: #888;
+}
+
+.stars {
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: normal;
+}
+
+.lang {
+    font-size: 0.7rem;
+    color: #666;
+    font-weight: normal;
+}
+
+/* blog list */
+
+.post-list {
+    list-style: none;
+}
+
+.post-list li {
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.post-list .date {
+    color: #666;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* blog post */
+
+.post {
+    margin-bottom: 3rem;
+}
+
+.post .meta {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.post p {
+    margin-bottom: 1rem;
+}
+
+.post pre {
+    background: #111;
+    padding: 1rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.post code {
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.post p code {
+    background: #111;
+    padding: 0.15rem 0.4rem;
+}
+
+.post ul, .post ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.post li {
+    margin-bottom: 0.3rem;
+}
+
+.post h2 {
+    margin-top: 2rem;
+}
+
+.post blockquote {
+    border-left: 3px solid #444;
+    padding-left: 1rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.post h1 + p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+/* uses */
+
+.uses h2 {
+    margin-top: 1.8rem;
+}
+
+.uses ul {
+    list-style: none;
+    margin-top: 0.4rem;
+}
+
+.uses li {
+    margin-bottom: 0.4rem;
+    color: #999;
+}
+
+/* contact */
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    margin-bottom: 0.8rem;
+}
+
+/* mobile */
+
+@media (max-width: 500px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .post-list li {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .deco {
+        display: none;
+    }
+}
