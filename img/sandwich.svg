@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200">
+  <!-- origin dot -->
+  <circle cx="140" cy="150" r="3" fill="#888"/>
+
+  <!-- original vector v (warm orange) - going up-right -->
+  <line x1="140" y1="150" x2="230" y2="60" stroke="#cc8855" stroke-width="2"/>
+  <line x1="230" y1="60" x2="218" y2="61" stroke="#cc8855" stroke-width="2"/>
+  <line x1="230" y1="60" x2="227" y2="72" stroke="#cc8855" stroke-width="2"/>
+  <text x="236" y="55" fill="#cc8855" font-family="Georgia, serif" font-size="18" font-style="italic">v</text>
+
+  <!-- rotated vector v' (teal) - going up-left, symmetric angle -->
+  <line x1="140" y1="150" x2="50" y2="60" stroke="#55aa99" stroke-width="2"/>
+  <line x1="50" y1="60" x2="62" y2="61" stroke="#55aa99" stroke-width="2"/>
+  <line x1="50" y1="60" x2="53" y2="72" stroke="#55aa99" stroke-width="2"/>
+  <text x="28" y="55" fill="#55aa99" font-family="Georgia, serif" font-size="18" font-style="italic">v'</text>
+
+  <!-- rotation arc (purple, dashed) - from near v tip to near v' tip -->
+  <path d="M 215,72 A 105,105 0 0,0 65,72" fill="none" stroke="#9977bb" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <!-- arrowhead connected to arc end, tangent pointing down-left -->
+  <line x1="65" y1="72" x2="64" y2="60" stroke="#9977bb" stroke-width="1.5"/>
+  <line x1="65" y1="72" x2="76" y2="68" stroke="#9977bb" stroke-width="1.5"/>
+
+  <!-- formula with colors -->
+  <text y="190" font-family="Georgia, serif" font-size="16" text-anchor="middle" font-style="italic" x="140">
+    <tspan fill="#55aa99">v'</tspan>
+    <tspan fill="#999"> = </tspan>
+    <tspan fill="#9977bb">R</tspan>
+    <tspan fill="#cc8855">v</tspan>
+    <tspan fill="#9977bb">R&#x0303;</tspan>
+  </text>
+</svg>
