@@ -13,25 +13,25 @@
 <body>
     <div class="container">
         <nav>
-            <a class="logo" href="index.html"><img src="wedge.svg" alt="Home"></a>
+            <a class="logo" href="/"><img src="wedge.svg" alt="Home"></a>
             <div class="links">
-                <a href="projects.html">Projects</a>
-                <a href="blog.html">Blog</a>
-                <a href="uses.html">Uses</a>
-                <a href="contact.html">Contact</a>
+                <a href="/projects">Projects</a>
+                <a href="/blog">Blog</a>
+                <a href="/uses">Uses</a>
+                <a href="/contact">Contact</a>
             </div>
         </nav>
 
-        <a class="back" href="blog.html">&larr; Back</a>
+        <a class="back" href="/blog">&larr; Back</a>
 
         <div class="post" id="post"></div>
     </div>
 
-    <script src="md.js"></script>
+    <script src="/blog/md.js"></script>
     <script>
         var name = new URLSearchParams(location.search).get('p');
         if (name) {
-            fetch('blog/' + name + '.md')
+            fetch('/blog/' + name + '.md')
                 .then(function(r) { return r.text(); })
                 .then(function(md) {
                     document.getElementById('post').innerHTML = renderMarkdown(md);
