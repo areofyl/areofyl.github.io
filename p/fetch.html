@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fetch - Aarav</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="../index.html"><img src="../wedge.svg" alt="Home"></a>
+            <div class="links">
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../uses.html">Uses</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <a class="back" href="javascript:history.back()">&larr; Back</a>
+
+        <div class="intro">
+            <h1>fetch</h1>
+            <p>A donut.c inspired fetch tool that spins your distro logo in 3D with system info updating in real time. Takes any ASCII logo, turns each character into a point cloud based on its visual density, and renders it as a rotating 3D relief with Blinn-Phong shading. Single file C, no deps beyond libm.</p>
+            <p><a href="https://github.com/areofyl/fetch">GitHub</a></p>
+        </div>
+
+        <img class="demo" src="fetch-demo.gif" alt="fetch demo">
+
+        <section>
+            <h2>Build and run</h2>
+<pre>make
+./fetch</pre>
+            <p>Press any key to stop. The keypress passes through to the shell so it works as a startup fetch. Ctrl-C works too.</p>
+        </section>
+
+        <section>
+            <h2>Install</h2>
+<pre># from source
+make
+sudo make install
+
+# arch (AUR)
+yay -S fetch-git
+
+# gentoo (GURU)
+eselect repository enable guru
+emaint sync -r guru
+emerge -a app-misc/fetch
+
+# homebrew
+brew tap areofyl/fetch
+brew install fetch-git</pre>
+        </section>
+
+        <section>
+            <h2>Logos</h2>
+            <p>Auto detects your distro and grabs the logo from fastfetch if installed, with original colors preserved. Works with any of fastfetch's 500+ logos. You can also specify one directly:</p>
+<pre>./fetch -l arch
+./fetch -l NixOS
+./fetch -l asahi</pre>
+            <p>Or drop a custom logo in <code>~/.config/fetch/logo.txt</code>. Without fastfetch the built-in Gentoo logo is used.</p>
+        </section>
+
+        <section>
+            <h2>System info</h2>
+            <p>All info is gathered natively, no fastfetch or neofetch needed. OS, host, kernel, uptime, packages, shell, display, WM, theme, CPU, GPU, memory, swap, disk, battery, local IP. Stats like memory, battery, and uptime update in real time while the logo spins.</p>
+        </section>
+
+        <section>
+            <h2>How it works</h2>
+            <p>Each character in the logo gets a weight based on its visual density. M is heavy, dots and dashes are light. That weight becomes a height, turning the flat logo into a 3D relief. Surface normals come from the height gradient, and everything gets rotated, projected, and shaded every frame with a z-buffer.</p>
+        </section>
+
+    </div>
+</body>
+</html>
