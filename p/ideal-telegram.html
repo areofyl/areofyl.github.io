@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ideal-telegram - Aarav</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="../index.html"><img src="../wedge.svg" alt="Home"></a>
+            <div class="links">
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../uses.html">Uses</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <a class="back" href="javascript:history.back()">&larr; Back</a>
+
+        <div class="intro">
+            <h1>ideal-telegram</h1>
+            <p>A Python typing automation tool that types text character by character with realistic speed variations, mistakes, and corrections instead of just pasting. This was my first ever project so it has a special place in my heart :)</p>
+            <p><a href="https://github.com/areofyl/ideal-telegram">GitHub</a></p>
+        </div>
+
+        <section>
+            <h2>How it works</h2>
+            <p>Types each character individually using the keyboard library. Randomized delays between keystrokes that scale with WPM. Error probability goes up with speed, just like real typing. Mistakes hit adjacent keys, then it backspaces and retypes. 95+ keyboard neighbor mappings for realistic typos.</p>
+        </section>
+
+        <section>
+            <h2>Usage</h2>
+<pre>$ python3 main.py
+
+Choose input method:
+1. Type text directly
+2. Load text from file
+3. Use default text
+4. Take typing test to set bot parameters
+5. Quit</pre>
+        </section>
+
+        <section>
+            <h2>Install</h2>
+<pre>git clone https://github.com/areofyl/ideal-telegram.git
+cd ideal-telegram
+python3 main.py</pre>
+        </section>
+
+    </div>
+</body>
+</html>
