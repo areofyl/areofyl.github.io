@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>glance - Aarav</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="../index.html"><img src="../wedge.svg" alt="Home"></a>
+            <div class="links">
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../uses.html">Uses</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <a class="back" href="javascript:history.back()">&larr; Back</a>
+
+        <div class="intro">
+            <h1>glance</h1>
+            <p>A file clipboard for Wayland. Watches directories for new files and pops up a widget in Waybar. Click to open a dropdown with actions: drag and drop, open, edit, or copy the path. Written in Rust.</p>
+            <p><a href="https://github.com/areofyl/glance">GitHub</a></p>
+        </div>
+
+        <img class="demo" src="glance-demo.gif" alt="glance demo">
+
+        <section>
+            <h2>Install</h2>
+<pre># from crates.io
+cargo install wayglance
+
+# from source
+git clone https://github.com/areofyl/glance
+cd glance
+cargo build --release
+cp target/release/glance ~/.local/bin/
+
+# then run the setup wizard
+glance init</pre>
+            <p>The setup wizard creates the config, adds the Waybar module, appends CSS, and sets up autostart. Restart Waybar and you're done.</p>
+        </section>
+
+        <section>
+            <h2>Commands</h2>
+<pre>glance init              # setup everything
+glance watch             # run the file watcher
+glance status            # JSON for waybar
+glance menu              # dropdown with actions
+glance copy              # copy file path
+glance drag              # drag and drop overlay
+glance scroll up|down    # navigate file history</pre>
+        </section>
+
+        <section>
+            <h2>Config</h2>
+            <p>Optional config at <code>~/.config/glance/config.toml</code>. Set which directories to watch, auto-dismiss timeout, which buttons show up in the dropdown, drag command (builtin GTK4 or something like ripdrag for XWayland browsers), and the menu appearance.</p>
+        </section>
+
+    </div>
+</body>
+</html>
