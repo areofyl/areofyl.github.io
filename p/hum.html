@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hum - Aarav</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="../index.html"><img src="../wedge.svg" alt="Home"></a>
+            <div class="links">
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../uses.html">Uses</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <a class="back" href="javascript:history.back()">&larr; Back</a>
+
+        <div class="intro">
+            <h1>hum</h1>
+            <p>A minimal TUI music player. Search YouTube, play with mpv, and it downloads tracks to a local library in the background. No accounts, no bloat. Next time you play that song it just works offline. Probably my favorite project if not the one I use the most.</p>
+            <p><a href="https://github.com/areofyl/hum">GitHub</a></p>
+        </div>
+
+        <section>
+            <h2>Dependencies</h2>
+            <p><a href="https://mpv.io">mpv</a> for playback, <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> for YouTube, and ncurses.</p>
+        </section>
+
+        <section>
+            <h2>Build</h2>
+<pre>make
+cp hum ~/.local/bin/</pre>
+        </section>
+
+        <section>
+            <h2>How it works</h2>
+            <p>Search for music on YouTube, play it, and hum automatically downloads it to <code>~/Music/hum</code> in the background. Playlists are just text files in <code>~/Music/hum/playlists/</code>. You can build them up over time by adding tracks from search results, your library, or the queue.</p>
+        </section>
+
+        <section>
+            <h2>Keys</h2>
+            <p>Vim-style navigation. <code>j/k</code> to move, <code>l</code> or Enter to play, Space to pause, <code>n/p</code> for next/previous, <code>a</code> to add to queue, <code>A</code> to add to playlist. Press <code>?</code> in the app for the full list.</p>
+        </section>
+
+        <section>
+            <h2>Config</h2>
+            <p>Edit <code>config.h</code> and rebuild. Keybinds, library path, search result count, volume step, seek step, all in there.</p>
+        </section>
+
+    </div>
+</body>
+</html>
