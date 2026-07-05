@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pypour - Aarav</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a class="logo" href="../index.html"><img src="../wedge.svg" alt="Home"></a>
+            <div class="links">
+                <a href="../projects.html">Projects</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../uses.html">Uses</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </nav>
+
+        <a class="back" href="javascript:history.back()">&larr; Back</a>
+
+        <div class="intro">
+            <h1>pypour</h1>
+            <p>Write Python in French. A transpiler that takes French keywords and builtins and turns them into standard Python. You can run .ppour files directly or transpile them. Pourquoi pas :)</p>
+            <p><a href="https://github.com/areofyl/pypour">GitHub</a></p>
+        </div>
+
+        <section>
+            <h2>Install</h2>
+<pre># C version (recommended)
+make
+
+# Python version
+pip install -e .</pre>
+        </section>
+
+        <section>
+            <h2>Example</h2>
+<pre>fonction saluer(nom):
+    afficher("Bonjour, " + nom + "!")
+
+pour i dans portee(3):
+    saluer("monde")
+
+si vrai:
+    afficher("C'est vrai!")
+sinon:
+    afficher("C'est faux!")</pre>
+        </section>
+
+        <section>
+            <h2>Usage</h2>
+<pre># run a .ppour file
+pypour run fichier.ppour
+
+# transpile to python
+pypour transpile fichier.ppour</pre>
+        </section>
+
+        <section>
+            <h2>What's translated</h2>
+            <p>All the Python keywords: <code>si</code> for if, <code>sinon</code> for else, <code>pour</code> for for, <code>fonction</code> for def, <code>tantque</code> for while, <code>retourner</code> for return, and so on. Builtins too: <code>afficher</code> for print, <code>saisir</code> for input, <code>longueur</code> for len, <code>portee</code> for range. Even error messages come out in French.</p>
+        </section>
+
+    </div>
+</body>
+</html>
