@@ -24,49 +24,54 @@
 
         <h1>Projects</h1>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/fetch">fetch</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="fetch">
+            <h2><a href="p/fetch.html">fetch</a> <span class="stars"></span> <span class="lang">C</span></h2>
             <p>3D spinning fetch tool. does blinn-phong shading and everything, single file.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/hum">hum</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="hum">
+            <h2><a href="p/hum.html">hum</a> <span class="stars"></span> <span class="lang">C</span></h2>
             <p>minimal TUI music player. searches youtube, plays with mpv, downloads to a local library.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/glance">glance</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="glance">
+            <h2><a href="p/glance.html">glance</a> <span class="stars"></span> <span class="lang">Rust</span></h2>
             <p>clipboard daemon thing for wayland. watches directories and pops up a waybar widget.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/gentoo.c">gentoo.c</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="gentoo.c">
+            <h2><a href="p/gentoo-c.html">gentoo.c</a> <span class="stars"></span> <span class="lang">C</span></h2>
             <p>spinning ascii gentoo logo in your terminal. just for fun.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/gslc">gslc</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="gslc">
+            <h2><a href="p/gslc.html">gslc</a> <span class="stars"></span> <span class="lang">C</span></h2>
             <p>geometry shorthand compiler. turns shorthand into full proofs.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/sef">sef</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="sef">
+            <h2><a href="p/sef.html">sef</a> <span class="stars"></span> <span class="lang">C</span></h2>
             <p>terminal text editor with ESDF keybinds. config.h style, like dwl.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/pypour">pypour</a> <span class="stars"></span> <span class="lang">Python</span></h2>
+        <div class="project" data-repo="pypour">
+            <h2><a href="p/pypour.html">pypour</a> <span class="stars"></span> <span class="lang">Python</span></h2>
             <p>write python in french. pourquoi pas.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/wlim">wlim</a> <span class="stars"></span> <span class="lang">C</span></h2>
+        <div class="project" data-repo="wlim">
+            <h2><a href="p/wlim.html">wlim</a> <span class="stars"></span> <span class="lang">C</span></h2>
             <p>vimium-style click hints for wayland. click stuff without a mouse.</p>
         </div>
 
-        <div class="project">
-            <h2><a href="https://github.com/areofyl/dotfiles">dotfiles</a> <span class="stars"></span> <span class="lang">Shell</span></h2>
+        <div class="project" data-repo="dotfiles">
+            <h2><a href="p/dotfiles.html">dotfiles</a> <span class="stars"></span> <span class="lang">Shell</span></h2>
             <p>my gentoo asahi configs. dwl, shell, editor, everything.</p>
+        </div>
+
+        <div class="project" data-repo="ideal-telegram">
+            <h2><a href="p/ideal-telegram.html">ideal-telegram</a> <span class="stars"></span> <span class="lang">Python</span></h2>
+            <p>typing automation tool. types text with realistic speed and mistakes. my first project :)</p>
         </div>
 
     </div>
@@ -76,8 +81,7 @@
             .then(function(r) { return r.json(); })
             .then(function(repos) {
                 document.querySelectorAll('.project').forEach(function(el) {
-                    var link = el.querySelector('a');
-                    var name = link.href.split('/').pop();
+                    var name = el.getAttribute('data-repo');
                     var repo = repos.find(function(r) { return r.name === name; });
                     if (repo) {
                         if (name === 'pypour') {
